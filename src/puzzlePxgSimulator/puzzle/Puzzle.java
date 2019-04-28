@@ -4,21 +4,21 @@ import java.util.Random;
 
 public class Puzzle {
 
-	private Peace[][] peaces;
+	private Piece[][] pieces;
 	
-	public Puzzle(Peace[][] peaces) {
-		this.peaces = peaces;
+	public Puzzle(Piece[][] peaces) {
+		this.pieces = peaces;
 	}
 	
-	public Peace getPeace(int i, int j) {
-		return this.peaces[i][j];
+	public Piece getPiece(int i, int j) {
+		return pieces[i][j];
 	}
 	
 	public boolean isCorrect() {
 		int index = 0;
-		for(int i = 0; i < peaces.length; i++) {
-			for(int j = 0; j < peaces[0].length; j++) {
-				if(peaces[i][j].getIndex() != index) {
+		for(int i = 0; i < pieces.length; i++) {
+			for(int j = 0; j < pieces[0].length; j++) {
+				if(pieces[i][j].getIndex() != index) {
 					return false;
 				}
 				index++;
@@ -28,20 +28,20 @@ public class Puzzle {
 	}
 	
 	public void move(int i, int j, int k, int l) {
-		Peace temp = this.peaces[i][j];
-		this.peaces[i][j] = this.peaces[k][l];
-		this.peaces[k][l] = temp;
+		Piece temp = pieces[i][j];
+		pieces[i][j] = pieces[k][l];
+		pieces[k][l] = temp;
 	}
 	
 	public void shuffle() {
 		Random random = new Random();
-	    for (int i = this.peaces.length - 1; i > 0; i--) {
-	        for (int j = this.peaces[i].length - 1; j > 0; j--) {
+	    for (int i = pieces.length - 1; i > 0; i--) {
+	        for (int j = pieces[i].length - 1; j > 0; j--) {
 	            int m = random.nextInt(i + 1);
 	            int n = random.nextInt(j + 1);
-	            Peace temp = this.peaces[i][j];
-	            this.peaces[i][j] = this.peaces[m][n];
-	            this.peaces[m][n] = temp;
+	            Piece temp = pieces[i][j];
+	            pieces[i][j] = pieces[m][n];
+	            pieces[m][n] = temp;
 	        }
 	    }
 	}

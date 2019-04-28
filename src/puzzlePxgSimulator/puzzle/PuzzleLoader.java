@@ -1,7 +1,6 @@
 package puzzlePxgSimulator.puzzle;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -22,8 +21,8 @@ public class PuzzleLoader {
 	}
 
 	public Puzzle getPuzzle() throws IOException {
-		BufferedImage mainImage = ImageIO.read(PuzzleLoader.class.getResource("puzzle.jpg"));
-		Peace peaces[][] = new Peace[LINES][COLUMNS];
+		BufferedImage mainImage = ImageIO.read(PuzzleLoader.class.getResource(IMAGE_NAME));
+		Piece pieces[][] = new Piece[LINES][COLUMNS];
 		int widthSubimage = IMAGE_WIDTH / COLUMNS;
 		int heigthSubimage = IMAGE_HEIGHT / LINES;
 		int x = 0, y = 0;
@@ -32,13 +31,13 @@ public class PuzzleLoader {
 		for(int i = 0; i < LINES; i++) {
 			for(int j = 0; j < COLUMNS; j++) {
 				icon = new ImageIcon(mainImage.getSubimage(x, y, widthSubimage, heigthSubimage));
-				peaces[i][j] = new Peace(icon, index);
+				pieces[i][j] = new Piece(icon, index);
 				index++;
 				x += widthSubimage;
 			}
 			x = 0;
 			y += heigthSubimage;
 		}
-		return new Puzzle(peaces);
+		return new Puzzle(pieces);
 	}
 }

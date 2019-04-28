@@ -2,12 +2,12 @@ package puzzlePxgSimulator.puzzle;
 
 import javax.swing.Icon;
 
-public class Peace {
+public class Piece {
 
 	private Icon icon;
 	private int index;
 	
-	public Peace(Icon icon, int index) {
+	public Piece(Icon icon, int index) {
 		this.icon = icon;
 		this.index = index;
 	}

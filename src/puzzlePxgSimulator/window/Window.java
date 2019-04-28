@@ -64,7 +64,7 @@ public class Window extends JFrame {
 					this.labels[i][j].addMouseListener(new LabelMouseListener(this, i, j));
 					this.add(this.labels[i][j]);
 				}
-				this.labels[i][j].setIcon(this.puzzle.getPeace(i, j).getIcon());
+				this.labels[i][j].setIcon(this.puzzle.getPiece(i, j).getIcon());
 			}
 		}
 	}
