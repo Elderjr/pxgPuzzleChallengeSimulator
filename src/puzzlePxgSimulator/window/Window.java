@@ -35,7 +35,7 @@ public class Window extends JFrame {
 
 	private final void onInit() {
 		try {
-			this.layout = new GridLayout(8, 13, 0, 0);
+			this.layout = new GridLayout(PuzzleLoader.LINES, PuzzleLoader.COLUMNS, 0, 0);
 			setLayout(this.layout);
 			this.selectedBorder = BorderFactory.createLineBorder(Color.RED, 1);
 			this.puzzle = PuzzleLoader.getInstance().getPuzzle();
