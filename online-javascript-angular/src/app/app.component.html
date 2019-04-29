@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <table *ngIf="loaded"  cellpadding="1" cellspacing="0">
+    <tr *ngFor="let piecesRow of puzzle.getPieces(); let i = index;">
+      <td *ngFor="let piece of piecesRow; let j = index;" (click)= "select(i, j)" [ngClass] = "{selected: isSelected(i, j), notSelected: !isSelected(i, j)}">
+          <img src="{{piece.getDataImg()}}" />
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div *ngIf="done">
+  Quebra-cabeça finalizado!
+</div>
+<button (click)="shuffle()" >Embaralhar</button> <br/>
+
+<button (click)="showOrHideOriginalImage()" >
+  <ng-container *ngIf="!showOriginalImage">
+    Mostrar Imagem Original
+  </ng-container>
+  <ng-container *ngIf="showOriginalImage">
+    Esconder Imagem Original
+  </ng-container>
+</button>
+<div *ngIf="showOriginalImage">
+  <img src="assets/puzzle.jpg" />
+</div>
+<router-outlet></router-outlet>
