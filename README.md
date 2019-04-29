@@ -10,4 +10,4 @@ A versão online do quebra-cabeça foi desenvolvida em Angular 7 e está dispon�
 A versão offline do quebra-cabeça foi desenvolvida em Java e o arquivo está disponível para [download](https://github.com/Elderjr/pxgPuzzleChallengeSimulator/blob/master/dist/pxgPuzzleSimulator.jar) na pasta dist. Para executar o programa é necessário ter instalado a [JVM versão 8+](https://www.java.com/pt_BR/download/win10.jsp).
 
 ### Imagem de ilustração
-![Imagem de ilustração do simulador](screenshot.png)
+![Imagem de ilustração do simulador](offline-java/screenshot.png)
